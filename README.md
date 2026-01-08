@@ -15,6 +15,7 @@ A Claude Code plugin containing an [Agent Skill](https://code.claude.com/docs/en
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Claude Code Plugin](https://img.shields.io/badge/Claude%20Code-Plugin-blue)](https://code.claude.com/docs/en/plugins)
 [![Claude Code Skill](https://img.shields.io/badge/Claude%20Code-Skill-green)](https://code.claude.com/docs/en/skills)
+[![Cursor Rules](https://img.shields.io/badge/Cursor-Rules-purple)](https://docs.cursor.com/context/rules-for-ai)
 [![Version](https://img.shields.io/badge/version-2.0.0-brightgreen)](https://github.com/OthmanAdi/planning-with-files/releases)
 
 ## Versions
@@ -107,6 +108,19 @@ git clone https://github.com/OthmanAdi/planning-with-files.git
 cp -r planning-with-files/skills/* ~/.claude/skills/
 ```
 
+### Cursor Installation
+
+Copy the `.cursor/rules/` directory into your project:
+
+```bash
+git clone https://github.com/OthmanAdi/planning-with-files.git
+cp -r planning-with-files/.cursor .cursor
+```
+
+Or manually create `.cursor/rules/planning-with-files.mdc` in your project with the content from this repo.
+
+> **Note:** Hooks (PreToolUse, Stop) are Claude Code specific and won't work in Cursor. The core planning workflow still applies.
+
 ## Usage
 
 Once installed, Claude will automatically:
@@ -132,6 +146,9 @@ planning-with-files/
 ├── .claude-plugin/
 │   ├── plugin.json          # Plugin manifest
 │   └── marketplace.json     # Marketplace listing
+├── .cursor/
+│   └── rules/
+│       └── planning-with-files.mdc  # Cursor rules file
 ├── skills/
 │   └── planning-with-files/
 │       ├── SKILL.md         # Main skill definition
